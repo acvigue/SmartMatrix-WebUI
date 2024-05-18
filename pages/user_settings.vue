@@ -1,3 +1,4 @@
+<!--
 <script setup lang="ts">
 import type { Database } from "@/supabase";
 import type { Factor } from "@supabase/gotrue-js";
@@ -190,7 +191,6 @@ const disableTwoFactor = async () => {
   <div class="flex flex-col w-full gap-4">
     <PageTitle>User Settings</PageTitle>
     <div v-if="!loading" class="columns-1 md:columns-2 gap-4 w-full">
-      <!-- Name -->
       <Card>
         <SectionTitle>Profile</SectionTitle>
         <FormKit type="form" submit-label="Save" @submit="saveProfileData">
@@ -288,3 +288,6 @@ const disableTwoFactor = async () => {
   </div>
 </template>
 ~/supabase
+-->
+
+<template>user settings</template>

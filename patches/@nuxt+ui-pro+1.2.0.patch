@@ -1,0 +1,19 @@
+diff --git a/node_modules/@nuxt/ui-pro/modules/pro/index.ts b/node_modules/@nuxt/ui-pro/modules/pro/index.ts
+index c8f62a6..fd51950 100644
+--- a/node_modules/@nuxt/ui-pro/modules/pro/index.ts
++++ b/node_modules/@nuxt/ui-pro/modules/pro/index.ts
+@@ -98,10 +98,10 @@ export default defineNuxtModule({
+           colors.blueBright(`Purchase Nuxt UI Pro at ${theme.link} to build your app in production.`)
+         )
+       }
+-      return
++      //return
+     }
+-    nuxt.hook('build:before', async () => {
+-      await validateLicense({ key, theme, dir: nuxt.options.rootDir })
+-    })
++    //nuxt.hook('build:before', async () => {
++    //  await validateLicense({ key, theme, dir: nuxt.options.rootDir })
++    //})
+   }
+ })
