@@ -49,4 +49,28 @@ func LS(w http.ResponseWriter, r *http.Request) {
 		}
 		fmt.Fprintln(w, "> ls -a -l -h")
 		fmt.Fprintln(w, string(lsOut))
+
+		lsCmd = exec.Command("bash", "-c", "pwd")
+		lsOut, err = lsCmd.Output()
+		if err != nil {
+			panic(err)
+		}
+		fmt.Fprintln(w, "> pwd")
+		fmt.Fprintln(w, string(lsOut))
+
+		lsCmd = exec.Command("bash", "-c", "ls -a -l -h /")
+		lsOut, err = lsCmd.Output()
+		if err != nil {
+			panic(err)
+		}
+		fmt.Fprintln(w, "> ls -a -l -h /")
+		fmt.Fprintln(w, string(lsOut))
+
+		lsCmd = exec.Command("bash", "-c", "ls -a -l -h ../")
+		lsOut, err = lsCmd.Output()
+		if err != nil {
+			panic(err)
+		}
+		fmt.Fprintln(w, "> ls -a -l -h ../")
+		fmt.Fprintln(w, string(lsOut))
 }
