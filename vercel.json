@@ -1,8 +1,8 @@
 {
   "installCommand": "dnf install -y libwebp libwebp-devel && yarn install",
-  "build": {
-    "env": {
-      "GO_BUILD_FLAGS": "-ldflags \"-linkmode 'external' -extldflags '-static'\""
+  "functions": {
+    "api/get_schema.go": {
+      "includeFiles": "api/lib/**"
     }
   }
 }
