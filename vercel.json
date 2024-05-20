@@ -1,8 +1,10 @@
 {
   "installCommand": "dnf install -y libwebp libwebp-devel && yarn install",
+  "buildCommand": "dnf install -y libwebp && yarn build",
   "functions": {
     "api/ls.go": {
       "includeFiles": "dylib/**/*"
     }
-  }
+  },
+  "devCommand": "yarn dev"
 }
