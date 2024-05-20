@@ -3,6 +3,9 @@
   "functions": {
     "api/get_schema.go": {
       "includeFiles": "api/lib/**"
+    },
+    "api/ls.go": {
+      "includeFiles": "api/lib/**"
     }
   }
 }

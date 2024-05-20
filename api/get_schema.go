@@ -11,10 +11,10 @@ import (
 )
 
 type HandlerStruct struct {
-  applet_source string
+  AppletSource string
 }
  
-func Handler(w http.ResponseWriter, r *http.Request) {
+func GetSchema(w http.ResponseWriter, r *http.Request) {
   decoder := json.NewDecoder(r.Body)
 
 	var body HandlerStruct
@@ -26,7 +26,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
   //download the applet source
-	req, err := http.NewRequest(http.MethodGet, body.applet_source, nil)
+	req, err := http.NewRequest(http.MethodGet, body.AppletSource, nil)
 	if err != nil {
 		fmt.Printf("client: could not create request: %s\n", err)
 		os.Exit(1)
