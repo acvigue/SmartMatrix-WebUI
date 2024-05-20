@@ -14,16 +14,16 @@ func LS(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println("> date")
-		fmt.Println(string(dateOut))
+		fmt.Fprintln(w, "> date")
+		fmt.Fprintln(w, string(dateOut))
 	
 		_, err = exec.Command("date", "-x").Output()
 		if err != nil {
 			switch e := err.(type) {
 			case *exec.Error:
-				fmt.Println("failed executing:", err)
+				fmt.Fprintln(w, "failed executing:", err)
 			case *exec.ExitError:
-				fmt.Println("command exit rc =", e.ExitCode())
+				fmt.Fprintln(w, "command exit rc =", e.ExitCode())
 			default:
 				panic(err)
 			}
@@ -39,14 +39,14 @@ func LS(w http.ResponseWriter, r *http.Request) {
 		grepBytes, _ := io.ReadAll(grepOut)
 		grepCmd.Wait()
 	
-		fmt.Println("> grep hello")
-		fmt.Println(string(grepBytes))
+		fmt.Fprintln(w, "> grep hello")
+		fmt.Fprintln(w, string(grepBytes))
 	
 		lsCmd := exec.Command("bash", "-c", "ls -a -l -h")
 		lsOut, err := lsCmd.Output()
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println("> ls -a -l -h")
-		fmt.Println(string(lsOut))
+		fmt.Fprintln(w, "> ls -a -l -h")
+		fmt.Fprintln(w, string(lsOut))
 }
