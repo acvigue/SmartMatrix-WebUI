@@ -1,3 +1,8 @@
 {
-  "installCommand": "dnf install -y libwebp libwebp-devel && yarn install"
+  "installCommand": "dnf install -y libwebp libwebp-devel && yarn install",
+  "build": {
+    "env": {
+      "GO_BUILD_FLAGS": "-ldflags \"-linkmode 'external' -extldflags '-static'\""
+    }
+  }
 }
