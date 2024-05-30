@@ -2,6 +2,8 @@ module smx-manager
 
 go 1.22.3
 
+require tidbyt.dev/pixlet v0.33.3
+
 require (
 	github.com/PuerkitoBio/goquery v1.5.1 // indirect
 	github.com/andybalholm/cascadia v1.1.0 // indirect
@@ -32,9 +34,8 @@ require (
 	go.starlark.net v0.0.0-20240411212711-9b43f0afd521 // indirect
 	golang.org/x/crypto v0.21.0 // indirect
 	golang.org/x/image v0.15.0 // indirect
-	golang.org/x/net v0.22.0 // indirect
+	golang.org/x/net v0.23.0 // indirect
 	golang.org/x/sys v0.18.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
-	tidbyt.dev/pixlet v0.33.3 // indirect
 )
